@@ -1,0 +1,5 @@
+C:\Users\ToanBN\Documents\Visual Studio 2015\Projects\OnlineShop\Common\bin\Debug\Common.dll
+C:\Users\ToanBN\Documents\Visual Studio 2015\Projects\OnlineShop\Common\bin\Debug\Common.pdb
+C:\Users\ToanBN\Documents\Visual Studio 2015\Projects\OnlineShop\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\ToanBN\Documents\Visual Studio 2015\Projects\OnlineShop\Common\obj\Debug\Common.dll
+C:\Users\ToanBN\Documents\Visual Studio 2015\Projects\OnlineShop\Common\obj\Debug\Common.pdb
