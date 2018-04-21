@@ -1,4 +1,4 @@
-﻿@model List<Models.Framework.Category>
+﻿@model List<Models.Framework.Product>
 
 @{
     ViewBag.Title = "Index";
@@ -9,7 +9,7 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Category List
+                Product List
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -18,20 +18,24 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
+                            <th>CategoryID</th>
                             <th>CreatedDate</th>
-                            <th>Order</th>
+                            <th>Detail</th>
+                            <th>Price</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var cate in Model)
+                        @foreach (var product in Model)
                         {
                             <tr class="odd gradeX">
-                                <td>@cate.ID</td>
-                                <td>@cate.Name</td>
-                                <td>@(cate.CreatedDate.HasValue ? cate.CreatedDate.Value.ToString("yyyy/MM/dd") : "")</td>
-                                <td class="center">@cate.Order.GetValueOrDefault(0)</td>
-                                <td class="center">@(cate.Status.GetValueOrDefault(false) ? "Active" : "Block")</td>
+                                <td>@product.ID</td>
+                                <td>@product.Name</td>
+                                <td>@product.CategoryID</td>
+                                <td>@(product.CreatedDate.HasValue ? product.CreatedDate.Value.ToString("yyyy/MM/dd") : "")</td>
+                                <td>@product.Detail</td>
+                                <td>@product.Price</td>
+                                <td class="center">@(product.Status.GetValueOrDefault(false) ? "Active" : "Block")</td>
                             </tr>
                         }
                     </tbody>
@@ -43,5 +47,4 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
-
 

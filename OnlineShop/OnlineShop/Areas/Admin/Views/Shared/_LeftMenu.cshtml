@@ -99,6 +99,48 @@
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
+            <li>
+                <a href="#"><i class="fa fa-files-o fa-fw"></i> Management<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="#">Category <span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                @Html.ActionLink("Category List", "Index", "Category")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Add new Category", "Create", "Category")
+                            </li>
+                            <li>
+                                <a href="#">Third Level Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Third Level Item</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-third-level -->
+                    </li>
+                    <li>
+                        <a href="#">Product <span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                @Html.ActionLink("Product List", "Index", "Product")
+                            </li>
+                            <li>
+                                <a href="#">Third Level Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Third Level Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Third Level Item</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-third-level -->
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
         </ul>
     </div>
     <!-- /.sidebar-collapse -->

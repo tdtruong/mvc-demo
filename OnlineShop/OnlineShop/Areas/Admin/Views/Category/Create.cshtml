@@ -1,0 +1,76 @@
+﻿@model Models.Framework.Category
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Create new Category
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+                            <div class="form-group">
+                                <label>@Html.LabelFor(model => model.Name)</label>
+                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>@Html.LabelFor(model => model.Alias)</label>
+                                @Html.TextBoxFor(model => model.Alias, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Alias)
+                            </div>
+
+                            <div class="form-group">
+                                <label>@Html.LabelFor(model => model.ParentID)</label>
+                                @Html.TextBoxFor(model => model.ParentID, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ParentID)
+                            </div>
+
+                            <div class="form-group">
+                                <label>@Html.LabelFor(model => model.CreatedDate)</label>
+                                @Html.TextBoxFor(model => model.CreatedDate, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.CreatedDate)
+                            </div>
+
+                            <div class="form-group">
+                                <label>@Html.LabelFor(model => model.Order)</label>
+                                @Html.TextBoxFor(model => model.Order, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Order)
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Status)
+                                @Html.DropDownListFor(model => model.Status, new List<SelectListItem>(){
+                                    new SelectListItem(){Selected = true, Text = "Active", Value = "true" },
+                                    new SelectListItem(){Selected = false, Text = "Block", Value = "false" },
+                                }, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Status)
+                            </div>
+
+                            <p>
+                                <input type="submit" class="btn btn-primary" value="Create" />
+                            </p>
+                        }
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+            </div>
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>

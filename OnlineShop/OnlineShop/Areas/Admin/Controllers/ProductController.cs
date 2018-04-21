@@ -1,5 +1,4 @@
 ﻿using Models;
-using Models.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +7,19 @@ using System.Web.Mvc;
 
 namespace OnlineShop.Areas.Admin.Controllers
 {
-    public class CategoryController : Controller
+    public class ProductController : Controller
     {
         //
-        // GET: /Admin/Category/
-
+        // GET: /Admin/Product/
+        [Authorize]
         public ActionResult Index()
         {
-            var cates = new CategoryModel().ListAll();
-            return View(cates);
+            var products = new ProductModel().ListAll();
+            return View(products);
         }
 
         //
-        // GET: /Admin/Category/Details/5
+        // GET: /Admin/Product/Details/5
 
         public ActionResult Details(int id)
         {
@@ -28,46 +27,33 @@ namespace OnlineShop.Areas.Admin.Controllers
         }
 
         //
-        // GET: /Admin/Category/Create
-        [HttpGet]
+        // GET: /Admin/Product/Create
+
         public ActionResult Create()
         {
             return View();
         }
 
         //
-        // POST: /Admin/Category/Create
+        // POST: /Admin/Product/Create
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Category collection)
+        public ActionResult Create(FormCollection collection)
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    var model = new CategoryModel();
-                    int rs = model.Insert(collection.Name, collection.Alias, collection.ParentID, collection.CreatedDate, collection.Order, collection.Status);
-                    if (rs > 0)
-                    {
-                        return RedirectToAction("Index");
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "Insert failed!");
-                    }
-                }
-                return View(collection);
-                
+                // TODO: Add insert logic here
+
+                return RedirectToAction("Index");
             }
-            catch (Exception e)
+            catch
             {
                 return View();
             }
         }
 
         //
-        // GET: /Admin/Category/Edit/5
+        // GET: /Admin/Product/Edit/5
 
         public ActionResult Edit(int id)
         {
@@ -75,7 +61,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         }
 
         //
-        // POST: /Admin/Category/Edit/5
+        // POST: /Admin/Product/Edit/5
 
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
@@ -93,7 +79,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         }
 
         //
-        // GET: /Admin/Category/Delete/5
+        // GET: /Admin/Product/Delete/5
 
         public ActionResult Delete(int id)
         {
@@ -101,7 +87,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         }
 
         //
-        // POST: /Admin/Category/Delete/5
+        // POST: /Admin/Product/Delete/5
 
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
