@@ -27,7 +27,7 @@ namespace OnlineShop2.Areas.Admin.Controllers
                 switch (rs)
                 {
                     case 1: // login success
-                        var user = userDao.GetById(model.UserName);
+                        var user = userDao.GetByUserName(model.UserName);
                         var userLogin = new UserLogin();
                         userLogin.UserID = user.ID;
                         userLogin.UserName = user.UserName;
