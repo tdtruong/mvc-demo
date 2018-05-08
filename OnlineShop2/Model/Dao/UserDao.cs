@@ -15,6 +15,11 @@ namespace Model.Dao
             db = new OnlineShopDbContext();
         }
 
+        /// <summary>
+        /// Insert new user to database
+        /// </summary>
+        /// <param name="entity">The user to insert</param>
+        /// <returns>user id</returns>
         public long Insert(User entity)
         {
             db.Users.Add(entity);
@@ -22,16 +27,32 @@ namespace Model.Dao
             return entity.ID;
         }
 
-        public bool Login(string userName, string passWord)
+        public User GetById(string userName)
         {
-            var rs = db.Users.Count(x=>x.UserName==userName && x.Password == passWord);
-            if (rs > 0)
+            return db.Users.SingleOrDefault(x => x.UserName == userName);
+        }
+
+        public int Login(string userName, string passWord)
+        {
+            var rs = db.Users.SingleOrDefault(x=>x.UserName == userName);
+            if (rs == null)
             {
-                return true;
+                return 0;
             }
             else
             {
-                return false;
+                if (!rs.Status)
+                {
+                    return -2;
+                }
+                if (rs.Password == passWord)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return -1;
+                }
             }
         }
     }
