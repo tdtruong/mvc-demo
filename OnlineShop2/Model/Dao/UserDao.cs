@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PagedList;
 
 namespace Model.Dao
 {
@@ -66,6 +67,21 @@ namespace Model.Dao
             return db.Users.ToList();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public IEnumerable<User> Paging(string searchString, int pageNumber, int pageSize)
+        {
+            IOrderedQueryable<User> model = db.Users.OrderByDescending(x => x.CreatedDate);
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.UserName.Contains(searchString) || x.Name.Contains(searchString)).OrderByDescending(x=>x.CreatedDate);
+            }
+            return model.ToPagedList(pageNumber, pageSize);
+        }
+
         public bool Update(User entity)
         {
             try
@@ -77,6 +93,21 @@ namespace Model.Dao
                 user.Address = entity.Address;
                 user.Email = entity.Email;
                 user.Phone = entity.Phone;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool Delete(int id)
+        {
+            try
+            {
+                var user = GetById(id);
+                db.Users.Remove(user);
                 db.SaveChanges();
                 return true;
             }

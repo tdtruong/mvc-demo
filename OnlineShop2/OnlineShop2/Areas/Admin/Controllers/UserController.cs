@@ -12,13 +12,21 @@ namespace OnlineShop2.Areas.Admin.Controllers
     public class UserController : BaseController
     {
         private UserDao userDao;
-        // GET: Admin/User
-        public ActionResult Index()
+        // GET: Admin/User - None paging
+        //public ActionResult Index()
+        //{
+        //    userDao = new UserDao();
+        //    var users = userDao.GetAll();
+        //    return View(users);
+        //}
+        public ActionResult Index(string searchString, int pageNumber = 1, int pageSize = 10)
         {
             userDao = new UserDao();
-            var users = userDao.GetAll();
+            var users = userDao.Paging(searchString, pageNumber, pageSize);
+            ViewBag.SearchString = searchString;
             return View(users);
         }
+
 
         [HttpGet]
         public ActionResult Create() {
@@ -30,6 +38,13 @@ namespace OnlineShop2.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 userDao = new UserDao();
+                // checking whether username is already taken
+                var existence = userDao.GetByUserName(user.UserName);
+                if (existence != null)
+                {
+                    ModelState.AddModelError("", "This username has been used, please choose another!");
+                    return View("Create");
+                }
                 var hashPassword = Encryptor.MD5Hash(user.Password);
                 user.Password = hashPassword;
                 var rs = userDao.Insert(user);
@@ -42,7 +57,7 @@ namespace OnlineShop2.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Insert failed!");
                 }
             }
-            return View("Index");
+            return View("Create");
         }
 
         public ActionResult Edit(int id)
@@ -78,6 +93,24 @@ namespace OnlineShop2.Areas.Admin.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            userDao = new UserDao();
+            var rs = userDao.Delete(id);
+            if (rs)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        public ActionResult Details(int id)
+        {
+            userDao = new UserDao();
+            var user = userDao.GetById(id);
+            return View(user);
         }
     }
 }

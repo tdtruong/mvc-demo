@@ -166,3 +166,7 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.Owin.Security.
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.Owin.Security.Google.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.Owin.Security.Twitter.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.Mvc.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.xml
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.Mvc.xml

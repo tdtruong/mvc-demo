@@ -12,9 +12,11 @@ namespace Model.EF
         public long ID { get; set; }
 
         [StringLength(50)]
+        [Required(ErrorMessage = "Please enter username!")]
         public string UserName { get; set; }
 
         [StringLength(32)]
+        [Required(ErrorMessage = "Please enter password!")]
         public string Password { get; set; }
 
         [StringLength(20)]
@@ -45,7 +47,6 @@ namespace Model.EF
 
         [StringLength(50)]
         public string ModifiedBy { get; set; }
-
         public bool Status { get; set; }
     }
 }

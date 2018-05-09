@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-@section header {Add new User}
+@section header {User information}
 
 <div class="row">
     <div class="col-lg-12">
@@ -16,21 +16,19 @@
                     {
                         @Html.AntiForgeryToken()
 
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
                         <div class="form-group media">
                             @Html.LabelFor(model => model.UserName, new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
                                 @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
                             </div>
-                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group media">
                             @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
-                                @Html.TextBoxFor(model => model.Password, new { @class = "form-control" })
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
                             </div>
-                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group media">
@@ -38,7 +36,6 @@
                             <div class="col-md-10">
                                 @Html.TextBoxFor(model => model.GroupID, new { @class = "form-control" })
                             </div>
-                            @Html.ValidationMessageFor(model => model.GroupID, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group media">
@@ -46,7 +43,6 @@
                             <div class="col-md-10">
                                 @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
                             </div>
-                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group media">
@@ -54,7 +50,6 @@
                             <div class="col-md-10">
                                 @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
                             </div>
-                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group media">
@@ -62,7 +57,6 @@
                             <div class="col-md-10">
                                 @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
                             </div>
-                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group media">
@@ -70,7 +64,6 @@
                             <div class="col-md-10">
                                 @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
                             </div>
-                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group media">
@@ -78,7 +71,6 @@
                             <div class="col-md-10">
                                 @Html.TextBoxFor(model => model.ProvinceID, new { @class = "form-control" })
                             </div>
-                            @Html.ValidationMessageFor(model => model.ProvinceID, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group media">
@@ -86,7 +78,6 @@
                             <div class="col-md-10">
                                 @Html.TextBoxFor(model => model.DistrictID, new { @class = "form-control" })
                             </div>
-                            @Html.ValidationMessageFor(model => model.DistrictID, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group media">
