@@ -170,3 +170,5 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.Mvc.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.Mvc.xml
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\CKFinder.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\CKFinder.pdb
