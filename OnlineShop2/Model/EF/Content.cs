@@ -12,6 +12,7 @@ namespace Model.EF
         public long ID { get; set; }
 
         [StringLength(250)]
+        [Required(ErrorMessage = "The content name is required!")]
         public string Name { get; set; }
 
         [StringLength(250)]

@@ -7,8 +7,18 @@
 
 @section header {Content}
 
+@section jsFooter{
+    <script src="~/Assets/admin/js/controllers/contentController.js"></script>
+}
+
 <div class="row">
     <div class="col-lg-12">
+        @if (ViewBag.ErrorContent != null)
+        {
+            <div>
+                <span class="alert alert-danger">@ViewBag.ErrorContent</span>
+            </div>
+        }
         <p>
             @Html.ActionLink("Create New", "Create", null, new { @class = "form-group" })
         </p>
@@ -29,24 +39,24 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
+                        <tr id="row_@item.ID">
                             <td>
                                 @Html.DisplayFor(modelItem => item.Name)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Description)
+                                @Html.Raw(item.Description)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.CategoryID)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Detail)
+                                @Html.Raw(item.Detail)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.ViewCount)
                             </td>
                             <td>
-                                @(item.Status ? "Active" : "Blocked")
+                                <a href="#" class="btn-active" data-id="@item.ID">@(item.Status ? "Active" : "Blocked")</a>
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Tags)
@@ -54,7 +64,11 @@
                             <td>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                @Ajax.ActionLink("Delete", "Delete", new { id = item.ID }, new AjaxOptions {
+                                    Confirm = "Are you sure want to delete this content?",
+                                    OnComplete = "$('#row_" + @item.ID + "').remove()",
+                                    HttpMethod = "Delete"
+                                })
                             </td>
                         </tr>
                     }

@@ -52,5 +52,28 @@ namespace Model.Dao
                 return false;
             }
         }
+
+        public bool Delete(long id)
+        {
+            try
+            {
+                var user = GetById(id);
+                db.Contents.Remove(user);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool ChangeStatus(long id)
+        {
+            var content = GetById(id);
+            content.Status = !content.Status;
+            db.SaveChanges();
+            return content.Status;
+        }
     }
 }

@@ -40,6 +40,10 @@
                         <h1 class="page-header">@RenderSection("header", required: true)</h1>
                     </div>
                 </div>
+                @if(TempData["AlertMessage"] != null)
+                {
+                    <div id="alertBox" class="@TempData["AlertType"] hide">@TempData["AlertMessage"]</div>
+                }
                 @RenderBody()
             </div>
         </div>
@@ -61,6 +65,12 @@
     <script src="/Assets/admin/data/morris-data.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="/Assets/admin/dist/js/sb-admin-2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#alertBox').removeClass('hide');
+            $('#alertBox').delay(1000).slideUp(500);
+        })
+    </script>
     @RenderSection("jsFooter", required: false)
 </body>
 </html>

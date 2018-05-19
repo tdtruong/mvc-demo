@@ -26,14 +26,25 @@ namespace OnlineShop2.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(Content model)
         {
             if (ModelState.IsValid)
             {
-
+                var contentDao = new ContentDao();
+                var rs = contentDao.Insert(model);
+                if (rs > 0)
+                {
+                    SetAlert("Insert success!", "success");
+                    return RedirectToAction("Index", "Content");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Insert failed, check the contents again");
+                }
             }
             SetViewBag();
-            return View();
+            return View("Create");
         }
 
         [HttpGet]
@@ -42,18 +53,58 @@ namespace OnlineShop2.Areas.Admin.Controllers
             var contentDao = new ContentDao();
             var content = contentDao.GetById(id);
             SetViewBag(content.CategoryID);
-            return View();
+            return View(content);
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(Content model)
         {
             if (ModelState.IsValid)
             {
-
+                var contentDao = new ContentDao();
+                var editedContent = contentDao.GetById(model.ID);
+                if (editedContent == null)
+                {
+                    ViewBag.ErrorContent = "This content is not exists or deleted.";
+                    return RedirectToAction("Index", "Content");
+                } else
+                {
+                    var rs = contentDao.Update(model);
+                    if (rs)
+                    {
+                        return RedirectToAction("Index", "Content");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Can not update this content. Please check again.");
+                    }
+                }
             }
             SetViewBag(model.CategoryID);
             return View();
+        }
+
+        public ActionResult Delete(long id)
+        {
+            var contentDao = new ContentDao();
+            var rs = contentDao.Delete(id);
+            if (rs)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var contentDao = new ContentDao();
+            var rs = contentDao.ChangeStatus(id);
+            SetAlert("Status is changed successfully!", "success");
+            return Json(new {
+                status = rs
+            });
         }
 
         public void SetViewBag(long? selectedId = null)

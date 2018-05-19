@@ -82,9 +82,6 @@ D:\tdtruong\c#\mvc\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.dll
 D:\tdtruong\c#\mvc\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.pdb
 D:\tdtruong\c#\mvc\OnlineShop2\OnlineShop2\bin\Model.dll
 D:\tdtruong\c#\mvc\OnlineShop2\OnlineShop2\bin\Model.pdb
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.csprojResolveAssemblyReference.cache
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.dll
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.pdb
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\ApplicationInsights.config
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\roslyn\csc.exe
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -102,6 +99,7 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\OnlineShop2.dll.config
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\OnlineShop2.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\OnlineShop2.pdb
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Antlr3.Runtime.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\CKFinder.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\EntityFramework.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\EntityFramework.SqlServer.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.AI.Agent.Intercept.dll
@@ -128,6 +126,8 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.Web.Infrastruc
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Model.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Newtonsoft.Json.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Owin.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.Mvc.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\System.Web.Helpers.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\System.Web.Mvc.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\System.Web.Optimization.dll
@@ -137,12 +137,15 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\System.Web.WebPages.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\System.Web.WebPages.Razor.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\WebGrease.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Model.pdb
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\CKFinder.pdb
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.AI.DependencyCollector.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.AI.Web.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.AI.WindowsServer.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.ApplicationInsights.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.xml
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.Mvc.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\System.Web.Helpers.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\System.Web.Mvc.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\System.Web.Optimization.xml
@@ -166,9 +169,6 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.Owin.Security.
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.Owin.Security.Google.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.Owin.Security.Twitter.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.dll
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.Mvc.dll
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.xml
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\PagedList.Mvc.xml
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\CKFinder.dll
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\CKFinder.pdb
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.csprojResolveAssemblyReference.cache
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.pdb
