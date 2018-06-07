@@ -23,15 +23,33 @@ namespace OnlineShop2.Controllers
             return PartialView(list);
         }
 
-        public ActionResult CategoryDetail(long cateId)
+        public ActionResult CategoryDetail(long cateId, int page = 1, int pageSize = 1)
         {
             var cate = new ProductCategoryDao().CategoryDetail(cateId);
-            return View(cate);
+            ViewBag.Category = cate;
+            int totalRecord = 0;
+            var model = new ProductDao().ListByCategoryId(cateId, ref totalRecord, page, pageSize);
+            ViewBag.Total = totalRecord;
+            ViewBag.Page = page;
+
+            int maxPage = 5;
+            int totalPage = 0;
+
+            totalPage = (int)Math.Ceiling((double)(totalRecord / pageSize));
+            ViewBag.TotalPage = totalPage;
+            ViewBag.MaxPage = maxPage;
+            ViewBag.First = 1;
+            ViewBag.Last = totalPage;
+            ViewBag.Prev = page - 1;
+            ViewBag.Next = page + 1;
+            return View(model); ;
         }
 
         public ActionResult ProductDetail(long id)
         {
             var product = new ProductDao().Detail(id);
+            ViewBag.Category = new ProductCategoryDao().CategoryDetail(product.CategoryID.Value);
+            ViewBag.RelatedProduct = new ProductDao().ListRelatedProduct(id);
             return View(product);
         }
     }

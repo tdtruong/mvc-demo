@@ -10,12 +10,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <title>Online Shop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/Assets/client/css/bootstrap.css" rel="stylesheet" />
+    <link href="/Assets/client/css/fontawesome-all.min.css" rel="stylesheet" />
     <link href="/Assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/Assets/client/css/slider.css" rel="stylesheet" type="text/css" media="all" />
-    <script type="text/javascript" src="/Assets/client/js/jquery-1.7.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/Assets/client/js/jquery-3.3.1.min.js"></script>
+    <script src="/Assets/client/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/Assets/client/js/move-top.js"></script>
     <script type="text/javascript" src="/Assets/client/js/easing.js"></script>
     <script type="text/javascript" src="/Assets/client/js/startstop-slider.js"></script>
+    @RenderSection("pagehead", required: false)
 </head>
 <body>
     <div class="wrap">
@@ -29,18 +35,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="header_top">
                 <div class="logo">
-                    <a href="index.html"><img src="/Assets/client/images/logo.png" alt="" /></a>
+                    <a href="/"><img src="/Assets/client/images/logo.png" alt="" /></a>
                 </div>
-                <div class="cart">
-                    <p>
-                        Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2">
-                            0 item(s) - $0.00
-                            <ul class="dropdown">
-                                <li>you have no items in your Shopping cart</li>
-                            </ul>
-                        </div>
-                    </p>
-                </div>
+                @{ Html.RenderAction("CartHeader", "Home");}
                 <script type="text/javascript">
 			function DropDown(el) {
 				this.dd = el;
@@ -80,10 +77,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="clear"></div>
             </div>
-            @RenderSection("slide", required: false);
+            @RenderSection("slide", required: false)
         </div>
         <div class="main">
-            @RenderBody();
+            @RenderBody()
         </div>
     </div>
     <div class="footer">
@@ -96,6 +93,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		});
     </script>
     <a href="#" id="toTop"><span id="toTopHover"> </span></a>
+    @RenderSection("jsFooter", required: false)
 </body>
 </html>
 

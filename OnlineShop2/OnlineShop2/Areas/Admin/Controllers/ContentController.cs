@@ -1,5 +1,6 @@
 ﻿using Model.Dao;
 using Model.EF;
+using OnlineShop2.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,7 @@ namespace OnlineShop2.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var contentDao = new ContentDao();
+                model.MetaTitle = Converter.ConvertToUnSign(model.Name);
                 var rs = contentDao.Insert(model);
                 if (rs > 0)
                 {
@@ -70,6 +72,7 @@ namespace OnlineShop2.Areas.Admin.Controllers
                     return RedirectToAction("Index", "Content");
                 } else
                 {
+                    model.MetaTitle = Converter.ConvertToUnSign(model.Name);
                     var rs = contentDao.Update(model);
                     if (rs)
                     {

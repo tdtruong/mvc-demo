@@ -1,0 +1,63 @@
+﻿@model List<OnlineShop2.Models.CartItem>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section jsFooter {
+    <script src="/Assets/client/js/controllers/cartController.js"></script>
+}
+
+<div class="content">
+    <div class="content_top">
+        <div class="heading">
+            <h3>Your shopping cart</h3>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="section group">
+        @if (Model.Count > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        var url = "/chi-tiet/" + item.Product.MetaTitle + "-" + item.Product.ID;
+                        <tr>
+                            <td><a href="@url">@item.Product.Name</a></td>
+                            <td><img src="@item.Product.Image" width="100" /></td>
+                            <td><input type="number" class="txtQuantity form-control" value="@item.Quantity" data-id="@item.Product.ID"/></td>
+                            <td>@(item.Product.Price.GetValueOrDefault(0).ToString("N0"))</td>
+                            <td>@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0"))</td>
+                            <td><a href="#" class="btn-delete" data-id="@item.Product.ID">Delete</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            
+            <div>
+                <button type="button" id="btnContinue" class="btn btn-default">Continue shopping</button>
+                <button type="button" id="btnUpdateCart" class="btn btn-default">Update cart</button>
+                <button type="button" id="btnDeleteAll" class="btn btn-default">Delete all</button>
+                <button type="button" id="btnPayment" class="btn btn-default">Payment</button>
+            </div>
+        }
+        else
+        {
+            <div>
+                <h1>Your shopping cart is empty</h1>
+                <a href="/">Go to shop</a>
+            </div>
+        }
+    </div>
+</div>

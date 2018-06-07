@@ -1,4 +1,6 @@
 ﻿using Model.Dao;
+using OnlineShop2.Common;
+using OnlineShop2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +43,18 @@ namespace OnlineShop2.Controllers
             var footerDao = new FooterDao();
             var footer = footerDao.GetFooter();
             return PartialView(footer);
+        }
+
+        [ChildActionOnly]
+        public ActionResult CartHeader()
+        {
+            var cart = Session[CommonConstants.CartSession];
+            var listItem = new List<CartItem>();
+            if (cart != null)
+            {
+                listItem = (List<CartItem>)cart;
+            }
+            return PartialView(listItem);
         }
     }
 
