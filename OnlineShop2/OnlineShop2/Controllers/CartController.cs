@@ -1,9 +1,11 @@
-﻿using Model.Dao;
+﻿using Common;
+using Model.Dao;
 using Model.EF;
 using OnlineShop2.Common;
 using OnlineShop2.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -126,6 +128,7 @@ namespace OnlineShop2.Controllers
                     order.ShipEmail = email;
                     long orderId = new OrderDao().Insert(order);
                     var cart = (List<CartItem>)Session[CommonConstants.CartSession];
+                    decimal totalPrice = 0;
                     foreach (var item in cart)
                     {
                         var orderDetail = new OrderDetail();
@@ -134,7 +137,22 @@ namespace OnlineShop2.Controllers
                         orderDetail.Price = item.Product.Price;
                         orderDetail.Quantity = item.Quantity;
                         new OrderDetailDao().Insert(orderDetail);
+                        totalPrice += (item.Product.Price.GetValueOrDefault(0) * item.Quantity);
                     }
+
+                    // Send email
+                    /*string mailContent = System.IO.File.ReadAllText(Server.MapPath("~/Assets/client/template/newOrder.html"));
+                    mailContent = mailContent.Replace("{{CustomerName}}", name);
+                    mailContent = mailContent.Replace("{{Phone}}", phone);
+                    mailContent = mailContent.Replace("{{Email}}", email);
+                    mailContent = mailContent.Replace("{{Address}}", address);
+                    mailContent = mailContent.Replace("{{Total}}", totalPrice.ToString("N0"));
+
+                    var toEmailAddress = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+
+                    new MailHepler().SendMail(email, "New Order from OnlineShop", mailContent);
+                    new MailHepler().SendMail(toEmailAddress, "New Order from OnlineShop", mailContent);*/
+
                     return Redirect("/complete");
                 }
                 catch (Exception)

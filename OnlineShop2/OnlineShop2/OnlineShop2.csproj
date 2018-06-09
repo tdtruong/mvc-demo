@@ -1391,6 +1391,7 @@
     <Content Include="Assets\client\css\slider.css" />
     <Content Include="Assets\client\css\style.css" />
     <Content Include="Assets\client\js\controllers\cartController.js" />
+    <Content Include="Assets\client\template\newOrder.html" />
     <Content Include="Assets\client\webfonts\fa-brands-400.svg" />
     <Content Include="Assets\client\webfonts\fa-regular-400.svg" />
     <Content Include="Assets\client\webfonts\fa-solid-900.svg" />
@@ -1610,6 +1611,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{5FF351E1-9CA9-4902-A694-9944140569D0}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{e9c97966-da12-49bc-9daa-d8909d657f56}</Project>
       <Name>Model</Name>

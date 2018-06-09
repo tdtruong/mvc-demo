@@ -1,0 +1,5 @@
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Common\bin\Debug\Common.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Common\bin\Debug\Common.pdb
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Common\obj\Debug\Common.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Common\obj\Debug\Common.pdb
