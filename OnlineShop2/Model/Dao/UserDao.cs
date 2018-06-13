@@ -116,5 +116,15 @@ namespace Model.Dao
                 return false;
             }
         }
+
+        public bool CheckUserName(string userName)
+        {
+            return db.Users.Count(x => x.UserName == userName) > 0;
+        }
+
+        public bool CheckUserEmail(string email)
+        {
+            return db.Users.Count(x => x.Email == email) > 0;
+        }
     }
 }

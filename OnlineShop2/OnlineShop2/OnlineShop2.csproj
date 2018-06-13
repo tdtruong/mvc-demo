@@ -218,12 +218,15 @@
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1391,6 +1394,7 @@
     <Content Include="Assets\client\css\slider.css" />
     <Content Include="Assets\client\css\style.css" />
     <Content Include="Assets\client\js\controllers\cartController.js" />
+    <Content Include="Assets\client\js\controllers\contactController.js" />
     <Content Include="Assets\client\template\newOrder.html" />
     <Content Include="Assets\client\webfonts\fa-brands-400.svg" />
     <Content Include="Assets\client\webfonts\fa-regular-400.svg" />
@@ -1594,6 +1598,8 @@
     <Content Include="Views\Cart\Payment.cshtml" />
     <Content Include="Views\Cart\Complete.cshtml" />
     <Content Include="Views\Shared\CartHeader.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
