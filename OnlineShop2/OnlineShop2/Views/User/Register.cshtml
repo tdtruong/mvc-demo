@@ -1,4 +1,10 @@
 ﻿@model OnlineShop2.Models.RegisterModel
+@using BotDetect.Web.Mvc
+
+<link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+      rel="stylesheet" type="text/css" />
+
+@{ MvcCaptcha registerCaptcha = new MvcCaptcha("registerCaptcha"); }
 
 @{
     ViewBag.Title = "Register";
@@ -21,7 +27,7 @@
             <div class="form-horizontal">
                 <div class="form-group col-md-6 mt-3">
                     @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-                    @if(ViewBag.RegisterStatus != null)
+                    @if (ViewBag.RegisterStatus != null)
                     {
                         <div class="alert alert-success">@ViewBag.RegisterStatus</div>
                     }
@@ -72,6 +78,13 @@
                     @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-6">
                         @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-6">
+                        @Html.Captcha(registerCaptcha)
+                        @Html.TextBox("CaptchaCode", null, new { @class = "form-control" })
                     </div>
                 </div>
 

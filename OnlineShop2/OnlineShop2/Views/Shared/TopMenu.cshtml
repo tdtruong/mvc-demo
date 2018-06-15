@@ -1,9 +1,23 @@
 ﻿@model List<Model.EF.Menu>
 <div class="account_desc">
-    <ul>
-        @foreach (var menu in Model)
-        {
-            <li><a href="@menu.Link" target="@menu.Target">@menu.Text</a></li>
-        }
-    </ul>
+    @{ 
+        var session = (OnlineShop2.Common.UserLogin)Session[OnlineShop2.Common.CommonConstants.USER_SESSION];
+    }
+    @if (session == null)
+    {
+        <ul>
+            @foreach (var menu in Model)
+            {
+                <li><a href="@menu.Link" target="@menu.Target">@menu.Text</a></li>
+            }
+        </ul>
+    }
+    else
+    {
+        <ul>
+            <li>
+                Hello @session.UserName @Html.ActionLink("Logout", "Logout", "User")
+            </li>
+        </ul>
+    }
 </div>

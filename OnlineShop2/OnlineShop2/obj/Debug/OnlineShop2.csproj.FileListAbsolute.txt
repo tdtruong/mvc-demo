@@ -174,3 +174,7 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.pdb
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Common.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Common.pdb
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\BotDetect.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\BotDetect.Web.Mvc.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Facebook.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Facebook.xml

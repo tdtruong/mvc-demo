@@ -34,7 +34,6 @@ namespace OnlineShop2.Areas.Admin.Controllers
                         userLogin.UserName = user.UserName;
                         Session.Add(CommonConstants.USER_SESSION, userLogin);
                         return RedirectToAction("Index", "Home");
-                        break;
                     case 0: // account is not exist
                         ModelState.AddModelError("", "The account is not exist!");
                         break;
