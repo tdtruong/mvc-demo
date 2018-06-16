@@ -10,6 +10,7 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml.Linq;
 
 namespace OnlineShop2.Controllers
 {
@@ -172,6 +173,46 @@ namespace OnlineShop2.Controllers
         {
             Session[CommonConstants.USER_SESSION] = null;
             return Redirect("/");
+        }
+
+        public JsonResult LoadProvince()
+        {
+            var xmlDoc = XDocument.Load(Server.MapPath(@"~/Assets/client/data/Provinces_Data.xml"));
+            var xElements = xmlDoc.Element("Root").Elements("Item").Where(x=>x.Attribute("type").Value == "province");
+            var list = new List<ProvinceModel>();
+            ProvinceModel province = null;
+            foreach(var item in xElements)
+            {
+                province = new ProvinceModel();
+                province.ID = int.Parse(item.Attribute("id").Value);
+                province.Name = item.Attribute("value").Value;
+                list.Add(province);
+            }
+            return Json(new {
+                success = true,
+                data = list
+            });
+        }
+
+        public ActionResult LoadDistrict(int provinceId)
+        {
+            var xmlDoc = XDocument.Load(Server.MapPath(@"~/Assets/client/data/Provinces_Data.xml"));
+            var provinceElement = xmlDoc.Element("Root").Elements("Item").Where(x => x.Attribute("type").Value == "province" && int.Parse(x.Attribute("id").Value) == provinceId);
+            var districtElement = provinceElement.Elements("Item").Where(x => x.Attribute("type").Value == "district");
+            var list = new List<DistrictModel>();
+            DistrictModel district = null;
+            foreach(var item in districtElement)
+            {
+                district = new DistrictModel();
+                district.ID = int.Parse(item.Attribute("id").Value);
+                district.Name = item.Attribute("value").Value;
+                district.ProvinceID = provinceId;
+                list.Add(district);
+            }
+            return Json(new {
+                success = true,
+                data = list
+            });
         }
     }
 }

@@ -238,7 +238,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\DistrictModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\ProvinceModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1407,8 +1409,10 @@
     <Content Include="Assets\client\css\global.css" />
     <Content Include="Assets\client\css\slider.css" />
     <Content Include="Assets\client\css\style.css" />
+    <Content Include="Assets\client\data\Provinces_Data.xml" />
     <Content Include="Assets\client\js\controllers\cartController.js" />
     <Content Include="Assets\client\js\controllers\contactController.js" />
+    <Content Include="Assets\client\js\controllers\userController.js" />
     <Content Include="Assets\client\template\newOrder.html" />
     <Content Include="Assets\client\webfonts\fa-brands-400.svg" />
     <Content Include="Assets\client\webfonts\fa-regular-400.svg" />

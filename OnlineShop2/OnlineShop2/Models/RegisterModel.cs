@@ -33,5 +33,9 @@ namespace OnlineShop2.Models
 
         [Required(ErrorMessage = "Phone is required!")]
         public string Phone { get; set; }
+
+        public int ProvinceID { get; set; }
+        public int DistrictID { get; set; }
+
     }
 }
