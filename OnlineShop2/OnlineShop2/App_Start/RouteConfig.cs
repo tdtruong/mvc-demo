@@ -81,6 +81,13 @@ namespace OnlineShop2
             );
 
             routes.MapRoute(
+               name: "Search",
+               url: "search",
+               defaults: new { controller = "Product", action = "Search", id = UrlParameter.Optional },
+               namespaces: new[] { "OnlineShop2.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },

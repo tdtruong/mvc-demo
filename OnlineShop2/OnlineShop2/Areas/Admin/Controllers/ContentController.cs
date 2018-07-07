@@ -34,6 +34,8 @@ namespace OnlineShop2.Areas.Admin.Controllers
             {
                 var contentDao = new ContentDao();
                 model.MetaTitle = Converter.ConvertToUnSign(model.Name);
+                var session = (UserLogin)Session[CommonConstants.USER_SESSION];
+                model.CreatedBy = session.UserName;
                 var rs = contentDao.Insert(model);
                 if (rs > 0)
                 {

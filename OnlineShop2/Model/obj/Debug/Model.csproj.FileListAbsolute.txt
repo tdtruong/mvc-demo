@@ -34,3 +34,5 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\System.Web.WebPages.Razo
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\obj\Debug\Model.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\obj\Debug\Model.pdb
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\Common.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\Common.pdb

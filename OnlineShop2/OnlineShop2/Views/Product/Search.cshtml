@@ -1,14 +1,13 @@
-﻿@model List<Model.EF.Product>
+﻿@model List<Model.ViewModel.ProductViewModel>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var category = (Model.EF.ProductCategory)ViewBag.Category;
-    ViewBag.Title = category.Name;
+    ViewBag.Title = "Seach Result";
 }
 
 <div class="content">
     <div class="content_top">
         <div class="heading">
-            <h3>@category.Name</h3>
+            <h3>Search Result by: @ViewBag.Keyword</h3>
         </div>
         <div class="see">
             <p><a href="#">See all Products</a></p>
@@ -20,7 +19,7 @@
         {
             var link = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
             <div class="grid_1_of_4 images_1_of_4">
-                <a href="@link"><img src="@item.Image" alt="" /></a>
+                <a href="@link"><img src="@item.Images" alt="" /></a>
                 <h2>@item.Name</h2>
                 <div class="price-details">
                     <div class="price-number">
@@ -42,32 +41,32 @@
 
             var startPage = Math.Max(1, currentPage - maxPage / 2);
             var endPage = Math.Min(totalPage, currentPage + maxPage / 2);
-            var link = "/san-pham/" + category.MetaTitle + "-" + category.ID;
+            var link = "/search?keyword=" + @ViewBag.Keyword;
 
             <div class="bd-example">
                 <nav aria-label="...">
                     <ul class="pagination">
                         @if (currentPage > ViewBag.First)
                         {
-                            <li class="page-item"><a href="@link?page=@ViewBag.First" title="First page" class="page-link"><i class="fa fa-angle-double-left"></i></a></li>
-                            <li class="page-item"><a href="@link?page=@ViewBag.Prev" title="Previous page" class="page-link"><i class="fa fa-angle-left"></i></a></li>
+                            <li class="page-item"><a href="@link&page=@ViewBag.First" title="First page" class="page-link"><i class="fa fa-angle-double-left"></i></a></li>
+                            <li class="page-item"><a href="@link&page=@ViewBag.Prev" title="Previous page" class="page-link"><i class="fa fa-angle-left"></i></a></li>
                         }
                         @for (int i = startPage; i <= endPage; i++)
                         {
                             if (currentPage == i)
                             {
-                                <li li class="page-item active"><a href="@link?page=@i" class="page-link" title="Page @i">@i</a></li>
+                                <li li class="page-item active"><a href="@link&page=@i" class="page-link" title="Page @i">@i</a></li>
                             }
                             else
                             {
-                                <li li class="page-item"><a href="@link?page=@i" class="page-link" title="Page @i">@i</a></li>
+                                <li li class="page-item"><a href="@link&page=@i" class="page-link" title="Page @i">@i</a></li>
                             }
                         }
 
                         @if (currentPage < ViewBag.Last)
                         {
-                            <li class="page-item"><a href="@link?page=@ViewBag.Next" title="Next page" class="page-link"><i class="fa fa-angle-right"></i></a></li>
-                            <li class="page-item"><a href="@link?page=@ViewBag.Last" title="Last page" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
+                            <li class="page-item"><a href="@link&page=@ViewBag.Next" title="Next page" class="page-link"><i class="fa fa-angle-right"></i></a></li>
+                            <li class="page-item"><a href="@link&page=@ViewBag.Last" title="Last page" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
                         }
                     </ul>
                 </nav>
