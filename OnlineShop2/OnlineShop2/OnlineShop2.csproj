@@ -231,6 +231,7 @@
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -247,6 +248,7 @@
   <ItemGroup>
     <Content Include="Assets\admin\data\flot-data.js" />
     <Content Include="Assets\admin\data\morris-data.js" />
+    <Content Include="Assets\admin\dist\css\custom.css" />
     <Content Include="Assets\admin\dist\css\sb-admin-2.css" />
     <Content Include="Assets\admin\dist\css\sb-admin-2.min.css" />
     <Content Include="Assets\admin\dist\js\sb-admin-2.js" />
@@ -1402,8 +1404,10 @@
     <Content Include="Assets\client\css\bootstrap-reboot.css" />
     <Content Include="Assets\client\css\bootstrap-reboot.min.css" />
     <Content Include="Assets\client\css\bootstrap-social.css" />
+    <Content Include="Assets\client\css\bootstrap-old.css" />
     <Content Include="Assets\client\css\bootstrap.css" />
     <Content Include="Assets\client\css\bootstrap.min.css" />
+    <Content Include="Assets\client\css\bootstrap.min.v4.css" />
     <Content Include="Assets\client\css\easy-responsive-tabs.css" />
     <Content Include="Assets\client\css\fontawesome-all.min.css" />
     <Content Include="Assets\client\css\global.css" />
@@ -1624,6 +1628,7 @@
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
+    <Content Include="Views\Content\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

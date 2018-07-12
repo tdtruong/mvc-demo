@@ -69,6 +69,13 @@ namespace OnlineShop2
                namespaces: new[] { "OnlineShop2.Controllers" }
             );
 
+            routes.MapRoute(
+               name: "News",
+               url: "news",
+               defaults: new { controller = "Content", action = "Index", id = UrlParameter.Optional },
+               namespaces: new[] { "OnlineShop2.Controllers" }
+           );
+
             // BotDetect requests must not be routed
             routes.IgnoreRoute("{*botdetect}",
               new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });

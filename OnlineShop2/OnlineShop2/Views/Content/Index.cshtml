@@ -1,0 +1,38 @@
+﻿@model PagedList.IPagedList<Model.EF.Content>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content">
+    <div class="content_top">
+        <div class="heading">
+            <h3>News</h3>
+        </div>
+        <div class="see"></div>
+        <div class="clear"></div>
+
+        @foreach (var item in Model)
+        {
+            var link = "/detail/" + item.MetaTitle + "-" + item.ID;
+            <div class="image group">
+                <div class="grid images_3_of_1">
+                    <img src="@item.Image" alt="" />
+                </div>
+                <div class="grid news_desc">
+                    <h3><a href="@link">@item.Name</a></h3>
+                    <h4>Posted on @item.CreatedDate by <span><a href="#">@item.CreatedBy</a></span></h4>
+                    @Html.Raw(item.Description)
+                </div>
+            </div>
+        }
+        @{
+            if (Model.PageCount > 1)
+            {
+                @Html.PagedListPager(Model, pageNumber => Url.Action("Index", new { pageNumber }))
+            }
+        }
+
+    </div>
+</div>

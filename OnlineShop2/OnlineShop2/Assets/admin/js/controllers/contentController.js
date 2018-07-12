@@ -23,6 +23,17 @@
                 }
             });
         });
+
+        $('a.view-full-content-detail').on('click', function (e) {
+            e.preventDefault();
+            var div = $(this).prev('.detail');
+            div.toggleClass('short-content-detail');
+            if (div.hasClass('short-content-detail')) {
+                $(this).text('more...');
+            } else {
+                $(this).text('...less')
+            }
+        });
     }
 }
 content.init();

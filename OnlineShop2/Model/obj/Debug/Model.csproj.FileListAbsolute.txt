@@ -11,6 +11,7 @@ D:\tdtruong\c#\mvc\OnlineShop2\Model\obj\Debug\Model.pdb
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\Model.dll.config
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\Model.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\Model.pdb
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\Common.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\EntityFramework.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\EntityFramework.SqlServer.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\PagedList.dll
@@ -21,6 +22,7 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\Microsoft.Web.Infrastruc
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\System.Web.Razor.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\System.Web.WebPages.Deployment.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\System.Web.WebPages.Razor.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\Common.pdb
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\EntityFramework.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\EntityFramework.SqlServer.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\PagedList.xml
@@ -34,5 +36,3 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\System.Web.WebPages.Razo
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\obj\Debug\Model.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\obj\Debug\Model.pdb
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\Common.dll
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\Model\bin\Debug\Common.pdb

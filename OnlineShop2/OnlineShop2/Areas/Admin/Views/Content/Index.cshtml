@@ -1,9 +1,10 @@
-﻿@model List<Model.EF.Content>
-
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+
+@model PagedList.IPagedList<Model.EF.Content>
+@using PagedList.Mvc;
 
 @section header {Content}
 
@@ -12,6 +13,19 @@
 }
 
 <div class="row">
+    <div class="col-lg-6">
+        @using (Html.BeginForm("Index", "Content", FormMethod.Get))
+            {
+            <div class="form-group input-group">
+                <input type="text" class="form-control" value="@ViewBag.SearchString" name="searchString" placeholder="Enter the content name..." />
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        }
+    </div>
     <div class="col-lg-12">
         @if (ViewBag.ErrorContent != null)
         {
@@ -50,7 +64,11 @@
                                 @Html.DisplayFor(modelItem => item.CategoryID)
                             </td>
                             <td>
-                                @Html.Raw(item.Detail)
+                                @if (!string.IsNullOrEmpty(item.Detail))
+                                {
+                                    @Html.Raw(string.Format("<div class='detail short-content-detail'>{0}</div>", item.Detail))
+                                    <a class="view-full-content-detail" href="#">more...</a>
+                                }
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.ViewCount)
@@ -69,11 +87,18 @@
                                     OnComplete = "$('#row_" + @item.ID + "').remove()",
                                     HttpMethod = "Delete"
                                 })
+                                @Html.ActionLink("Delete NonAjax", "Delete", new { id = item.ID })
                             </td>
                         </tr>
                     }
                 </tbody>
             </table>
+            @{
+                if (Model.PageCount > 1)
+                {
+                    @Html.PagedListPager(Model, pageNumber => Url.Action("Index", new { pageNumber, @searchString = @ViewBag.SearchString }))
+                }
+            }
         </div>
     </div>
 </div>

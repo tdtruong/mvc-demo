@@ -6,16 +6,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace OnlineShop2.Areas.Admin.Controllers
 {
     public class ContentController : BaseController
     {
         // GET: Admin/Content
-        public ActionResult Index()
+        public ActionResult Index(string searchString, int pageNumber = 1, int pageSize = 4)
         {
-            var contentDao = new ContentDao();
-            var model = contentDao.ListAll();
+            // not paging
+            //var contentDao = new ContentDao();
+            //var model = contentDao.ListAll();
+
+            // paging with PagedList
+            var model = new ContentDao().Paging(searchString, pageNumber, pageSize);
+            ViewBag.SearchString = searchString;
             return View(model);
         }
 

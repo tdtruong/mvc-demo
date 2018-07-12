@@ -1,0 +1,6 @@
+﻿.short-content-detail {
+    max-height:100px;
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

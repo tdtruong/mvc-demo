@@ -99,9 +99,13 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\OnlineShop2.dll.config
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\OnlineShop2.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\OnlineShop2.pdb
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Antlr3.Runtime.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\BotDetect.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\BotDetect.Web.Mvc.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\CKFinder.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Common.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\EntityFramework.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\EntityFramework.SqlServer.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Facebook.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.AI.Agent.Intercept.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.AI.DependencyCollector.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -136,8 +140,10 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\System.Web.WebPages.Depl
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\System.Web.WebPages.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\System.Web.WebPages.Razor.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\WebGrease.dll
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Common.pdb
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Model.pdb
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\CKFinder.pdb
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Facebook.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.AI.DependencyCollector.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.AI.Web.xml
@@ -172,9 +178,3 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.Owin.Security.
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.csprojResolveAssemblyReference.cache
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.pdb
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Common.dll
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Common.pdb
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\BotDetect.dll
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\BotDetect.Web.Mvc.dll
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Facebook.dll
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Facebook.xml

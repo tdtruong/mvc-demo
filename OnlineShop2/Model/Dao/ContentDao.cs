@@ -1,5 +1,6 @@
 ﻿using Common;
 using Model.EF;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,22 @@ namespace Model.Dao
             return db.Contents.ToList();
         }
 
+        public IEnumerable<Content> Paging(string searchString, int pageNumber, int pageSize)
+        {
+            IOrderedQueryable<Content> model = db.Contents.OrderByDescending(x => x.CreatedDate);
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.Name.Contains(searchString) || x.Name.Contains(searchString)).OrderByDescending(x => x.CreatedDate);
+            }
+            return model.ToPagedList(pageNumber, pageSize);
+        }
+
+        public IEnumerable<Content> Paging(int pageNumber, int pageSize)
+        {
+            IOrderedQueryable<Content> model = db.Contents.OrderByDescending(x => x.CreatedDate);
+            return model.ToPagedList(pageNumber, pageSize);
+        }
+
         public Content GetById(long id)
         {
             return db.Contents.Find(id);
@@ -37,24 +54,7 @@ namespace Model.Dao
             db.SaveChanges();
 
             // Insert tag to tag table and content tag table
-            if(!string.IsNullOrEmpty(entity.Tags))
-            {
-                string[] tags = entity.Tags.Split(',');
-                foreach(var tag in tags)
-                {
-                    if (string.IsNullOrEmpty(tag))
-                    {
-                        continue;
-                    }
-                    var tagId = StringHelper.ToUnsignString(tag.Trim());
-                    if (!IsExistTag(tagId))
-                    {
-                        InsertTag(tagId, tag);
-                    }
-
-                    InsertContentTag(entity.ID, tagId);
-                }
-            }
+            InsertTagAndContentTag(entity);
             return entity.ID;
         }
 
@@ -62,6 +62,12 @@ namespace Model.Dao
         private bool IsExistTag(string tagId)
         {
             return db.Tags.Count(x => x.ID == tagId) > 0;
+        }
+
+        // Check a content tag is exist in the content tag table or not
+        private bool IsExistContentTag(long contentId, string tagId)
+        {
+            return db.ContentTags.Count(x => x.ContentID == contentId && x.TagID == tagId) > 0;
         }
 
         // Insert new tag to tag table
@@ -75,6 +81,35 @@ namespace Model.Dao
             return tag.ID;
         }
 
+        private void InsertTagAndContentTag(Content content)
+        {
+            if (!string.IsNullOrEmpty(content.Tags))
+            {
+                string[] tags = content.Tags.Split(',').Where(x => !string.IsNullOrEmpty(x)).ToArray();
+                foreach (var tag in tags)
+                {
+                    var tagId = StringHelper.ToUnsignString(tag.Trim());
+                    if (!IsExistTag(tagId))
+                    {
+                        InsertTag(tagId, tag.Trim());
+                    }
+
+                    // Insert or update content tag
+                    if (!IsExistContentTag(content.ID, tagId))
+                    {
+                        InsertContentTag(content.ID, tagId);
+                    }
+                    else
+                    {
+                        var contentTag = new ContentTag();
+                        contentTag.ContentID = content.ID;
+                        contentTag.TagID = tagId;
+                        UpdateContentTag(contentTag);
+                    }
+                }
+            }
+        }
+
         // Insert new content tag
         private long InsertContentTag(long contentId, string tagId)
         {
@@ -84,6 +119,23 @@ namespace Model.Dao
             db.ContentTags.Add(contentTag);
             db.SaveChanges();
             return contentTag.ContentID;
+        }
+
+        // Update content tag
+        private bool UpdateContentTag(ContentTag entity)
+        {
+            try
+            {
+                var contentTag = db.ContentTags.Find(entity);
+                contentTag.ContentID = entity.ContentID;
+                contentTag.TagID = entity.TagID;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public bool Update(Content entity)
@@ -98,6 +150,9 @@ namespace Model.Dao
                 content.CategoryID = entity.CategoryID;
                 content.Status = entity.Status;
                 content.Tags = entity.Tags;
+                // Insert tag to tag table and content tag table
+                InsertTagAndContentTag(entity);
+
                 db.SaveChanges();
                 return true;
             }
