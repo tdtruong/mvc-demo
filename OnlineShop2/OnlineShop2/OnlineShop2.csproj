@@ -1629,6 +1629,8 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
     <Content Include="Views\Content\Index.cshtml" />
+    <Content Include="Views\Content\Detail.cshtml" />
+    <Content Include="Views\Content\TagDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

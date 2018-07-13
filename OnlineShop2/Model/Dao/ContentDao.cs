@@ -38,6 +38,74 @@ namespace Model.Dao
             return model.ToPagedList(pageNumber, pageSize);
         }
 
+        /// <summary>
+        /// Get all tag of a content
+        /// </summary>
+        /// <param name="contentId">the Content ID</param>
+        /// <returns>List of tag</returns>
+        public List<Tag> ListAllTag(long contentId)
+        {
+            var model = (from a in db.Tags
+                         join b in db.ContentTags
+                         on a.ID equals b.TagID
+                         where b.ContentID == contentId
+                         select new
+                         {
+                             ID = b.TagID,
+                             Name = a.Name
+                         }).AsEnumerable().Select(x => new Tag() {
+                             ID = x.ID,
+                             Name = x.Name
+                         });
+            return model.ToList();
+        }
+
+        /// <summary>
+        /// Get all content related to the tag
+        /// </summary>
+        /// <param name="tag">the tag name</param>
+        /// <param name="pageNumber">current page number</param>
+        /// <param name="pageSize">page size</param>
+        /// <returns></returns>
+        public IEnumerable<Content> GetAllContentByTag(string tag, int page, int pageSize)
+        {
+            IOrderedEnumerable<Content> model = (from a in db.Contents
+                        join b in db.ContentTags
+                        on a.ID equals b.ContentID
+                        where b.TagID == tag
+                        select new
+                        {
+                            ID = a.ID,
+                            Name = a.Name,
+                            MetaTitle = a.MetaTitle,
+                            Image = a.Image,
+                            Description = a.Description,
+                            Detail = a.Detail,
+                            CreatedDate = a.CreatedDate,
+                            CreatedBy = a.CreatedBy
+                        }).AsEnumerable().Select(x=> new Content() {
+                            ID = x.ID,
+                            Name = x.Name,
+                            MetaTitle = x.MetaTitle,
+                            Image = x.Image,
+                            Description = x.Description,
+                            Detail = x.Detail,
+                            CreatedDate = x.CreatedDate,
+                            CreatedBy = x.CreatedBy
+                        }).OrderByDescending(x=>x.CreatedDate);
+            return model.ToPagedList(page, pageSize);
+        }
+
+        /// <summary>
+        /// Get Tag by id
+        /// </summary>
+        /// <param name="tagId">the Tag id</param>
+        /// <returns>Tag entity</returns>
+        public Tag GetTagById(string tagId)
+        {
+            return db.Tags.Find(tagId);
+        }
+
         public Content GetById(long id)
         {
             return db.Contents.Find(id);
