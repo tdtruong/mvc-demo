@@ -4,7 +4,7 @@
     <ul>
         @foreach (var menu in Model)
         {
-            <li><a href="@menu.Link" target="@menu.Target">@menu.Text</a></li>
+            <li><a href="@menu.Link" target="@menu.Target" title="@menu.Text">@menu.Text</a></li>
         }
         <div class="clear"></div>
     </ul>

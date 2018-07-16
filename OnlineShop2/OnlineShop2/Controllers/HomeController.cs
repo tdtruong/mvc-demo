@@ -3,6 +3,7 @@ using OnlineShop2.Common;
 using OnlineShop2.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -18,6 +19,9 @@ namespace OnlineShop2.Controllers
             var productDao = new ProductDao();
             ViewBag.ListNewProducts = productDao.ListNewProduct(4);
             ViewBag.ListFeatureProducts = productDao.ListFeatureProduct(4);
+            ViewBag.Title = ConfigurationManager.AppSettings["HomeTitle"];
+            ViewBag.Keywords = ConfigurationManager.AppSettings["HomeKeywords"];
+            ViewBag.Description = ConfigurationManager.AppSettings["HomeDescription"];
             return View();
         }
 

@@ -8,13 +8,13 @@
         var toggleAttr = childs.Count() > 0 ? "data-toggle=dropdown id=navbarDropdown aria-haspopup=true aria-expanded=false" : "";
         var toggleClass = childs.Count() > 0 ? "class=dropdown-toggle" : "";
         <li class="nav-item dropdown">
-            <a @toggleClass @toggleAttr href="/san-pham/@item.MetaTitle-@item.ID">@item.Name</a>
+            <a @toggleClass @toggleAttr href="/san-pham/@item.MetaTitle-@item.ID" title="@item.Name">@item.Name</a>
             @if (childs.Count() > 0)
             {
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     @foreach(var child in childs)
                     {
-                        <li class="dropdown-item"><a href="/san-pham/@child.MetaTitle-@child.ID">@child.Name</a></li>
+                        <li class="dropdown-item"><a href="/san-pham/@child.MetaTitle-@child.ID" title="@child.Name">@child.Name</a></li>
                     }
                 </ul>
             }
