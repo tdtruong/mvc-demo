@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PagedList;
+using Common;
 
 namespace Model.Dao
 {
@@ -53,26 +54,69 @@ namespace Model.Dao
             return db.Users.SingleOrDefault(x => x.ID == id);
         }
 
-        public int Login(string userName, string passWord)
+        public List<string> GetUserCredential(string userName)
         {
-            var rs = db.Users.SingleOrDefault(x=>x.UserName == userName);
+            var user = GetByUserName(userName);
+            var model = (from a in db.Credentials
+                         join b in db.UserGroups
+                         on a.UserGroupID equals b.ID
+                         join c in db.Roles
+                         on a.RoleID equals c.ID
+                         where b.ID == user.GroupID
+                         select new
+                         {
+                             RoleID = a.RoleID,
+                             UserGroupID = a.UserGroupID
+                         }).AsEnumerable().Select(x => new Credential() {
+                             RoleID = x.RoleID,
+                             UserGroupID = x.UserGroupID
+                         });
+            return model.Select(x => x.RoleID).ToList();
+        }
+
+        public int Login(string userName, string passWord, bool isAdmin = false)
+        {
+            var rs = db.Users.SingleOrDefault(x => x.UserName == userName);
             if (rs == null)
             {
                 return 0;
             }
             else
             {
-                if (!rs.Status)
+                if (!isAdmin)
                 {
-                    return -2;
+                    if (!rs.Status)
+                    {
+                        return -2;
+                    }
+                    else if (rs.Password == passWord)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
                 }
-                if (rs.Password == passWord)
+                // is Admin
+                if (rs.GroupID == Constants.ADMIN_GROUP || rs.GroupID == Constants.MOD_GROUP)
                 {
-                    return 1;
+                    if (!rs.Status)
+                    {
+                        return -2;
+                    }
+                    else if (rs.Password == passWord)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
                 }
                 else
                 {
-                    return -1;
+                    return -3;
                 }
             }
         }
@@ -92,7 +136,7 @@ namespace Model.Dao
             IOrderedQueryable<User> model = db.Users.OrderByDescending(x => x.CreatedDate);
             if (!string.IsNullOrEmpty(searchString))
             {
-                model = model.Where(x => x.UserName.Contains(searchString) || x.Name.Contains(searchString)).OrderByDescending(x=>x.CreatedDate);
+                model = model.Where(x => x.UserName.Contains(searchString) || x.Name.Contains(searchString)).OrderByDescending(x => x.CreatedDate);
             }
             return model.ToPagedList(pageNumber, pageSize);
         }

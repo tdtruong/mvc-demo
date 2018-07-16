@@ -1,6 +1,6 @@
 ﻿@model List<Model.EF.Menu>
 <div class="account_desc">
-    @{ 
+    @{
         var session = (OnlineShop2.Common.UserLogin)Session[OnlineShop2.Common.CommonConstants.USER_SESSION];
     }
     @if (session == null)

@@ -228,6 +228,7 @@
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\Converter.cs" />
     <Compile Include="Common\Encryptor.cs" />
+    <Compile Include="Common\HasCredentialAttribute.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -1590,6 +1591,7 @@
     <Content Include="Assets\client\webfonts\fa-solid-900.ttf" />
     <Content Include="Assets\client\webfonts\fa-solid-900.woff" />
     <Content Include="Assets\client\webfonts\fa-solid-900.woff2" />
+    <Content Include="Areas\Admin\Views\Shared\401.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1631,6 +1633,7 @@
     <Content Include="Views\Content\Index.cshtml" />
     <Content Include="Views\Content\Detail.cshtml" />
     <Content Include="Views\Content\TagDetail.cshtml" />
+    <Content Include="Views\Error\401.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

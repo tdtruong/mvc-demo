@@ -82,6 +82,7 @@ D:\tdtruong\c#\mvc\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.dll
 D:\tdtruong\c#\mvc\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.pdb
 D:\tdtruong\c#\mvc\OnlineShop2\OnlineShop2\bin\Model.dll
 D:\tdtruong\c#\mvc\OnlineShop2\OnlineShop2\bin\Model.pdb
+D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\ApplicationInsights.config
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\roslyn\csc.exe
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -176,5 +177,4 @@ D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.Owin.Security.
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.Owin.Security.Twitter.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.csprojResolveAssemblyReference.cache
-D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.dll
 D:\tdtruong\c#\mvc\mvc-demo\OnlineShop2\OnlineShop2\obj\Debug\OnlineShop2.pdb

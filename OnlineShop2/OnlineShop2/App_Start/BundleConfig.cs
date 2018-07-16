@@ -23,9 +23,22 @@ namespace OnlineShop2
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/bundles/app-css").Include(
+                      "~/Assets/client/css/bootstrap.min.css",
+                      "~/Assets/client/css/bootstrap-social.css",
+                      "~/Assets/client/css/jquery-ui.css",
+                      "~/Assets/client/css/fontawesome-all.min.css",
+                      "~/Assets/client/css/style.css",
+                      "~/Assets/client/css/slider.css"
+                      ));
+            bundles.Add(new ScriptBundle("~/bundles/app-js").Include(
+                "~/Assets/client/js/jquery-3.3.1.min.js",
+                "~/Assets/client/js/jquery-ui.js",
+                "~/Assets/client/js/bootstrap.min.js",
+                "~/Assets/client/js/move-top.js",
+                "~/Assets/client/js/easing.js",
+                "~/Assets/client/js/startstop-slider.js"));
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

@@ -19,6 +19,7 @@ namespace OnlineShop2.Areas.Admin.Controllers
         //    var users = userDao.GetAll();
         //    return View(users);
         //}
+        [HasCredential(RoleID = "VIEW_USER")]
         public ActionResult Index(string searchString, int pageNumber = 1, int pageSize = 10)
         {
             userDao = new UserDao();
@@ -29,10 +30,12 @@ namespace OnlineShop2.Areas.Admin.Controllers
 
 
         [HttpGet]
+        [HasCredential(RoleID = "ADD_USER")]
         public ActionResult Create() {
             return View();
         }
         [HttpPost]
+        [HasCredential(RoleID = "ADD_USER")]
         public ActionResult Create(User user)
         {
             if (ModelState.IsValid)
@@ -59,7 +62,7 @@ namespace OnlineShop2.Areas.Admin.Controllers
             }
             return View("Create");
         }
-
+        [HasCredential(RoleID = "EDIT_USER")]
         public ActionResult Edit(int id)
         {
             userDao = new UserDao();
@@ -70,6 +73,7 @@ namespace OnlineShop2.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [HasCredential(RoleID = "EDIT_USER")]
         public ActionResult Edit(int id, User user)
         {
             try
@@ -95,6 +99,7 @@ namespace OnlineShop2.Areas.Admin.Controllers
             }
         }
 
+        [HasCredential(RoleID = "EDIT_USER")]
         public ActionResult Delete(int id)
         {
             userDao = new UserDao();
@@ -106,6 +111,7 @@ namespace OnlineShop2.Areas.Admin.Controllers
             return View();
         }
 
+        [HasCredential(RoleID = "VIEW_USER")]
         public ActionResult Details(int id)
         {
             userDao = new UserDao();

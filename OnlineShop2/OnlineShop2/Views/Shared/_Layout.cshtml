@@ -10,20 +10,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <title>Online Shop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="/Assets/client/css/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="/Assets/client/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/Assets/client/css/bootstrap-social.css" rel="stylesheet" />
     <link href="~/Assets/client/css/jquery-ui.css" rel="stylesheet" />
     <link href="/Assets/client/css/fontawesome-all.min.css" rel="stylesheet" />
     <link href="/Assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="/Assets/client/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/Assets/client/css/slider.css" rel="stylesheet" type="text/css" media="all" />*@
+    @Styles.Render("~/bundles/app-css");
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/Assets/client/js/jquery-3.3.1.min.js"></script>
+    @*<script type="text/javascript" src="/Assets/client/js/jquery-3.3.1.min.js"></script>
     <script src="/Assets/client/js/jquery-ui.js"></script>
     <script src="/Assets/client/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/Assets/client/js/move-top.js"></script>
     <script type="text/javascript" src="/Assets/client/js/easing.js"></script>
-    <script type="text/javascript" src="/Assets/client/js/startstop-slider.js"></script>
+    <script type="text/javascript" src="/Assets/client/js/startstop-slider.js"></script>*@
+    @Scripts.Render("~/bundles/app-js");
     @RenderSection("pagehead", required: false)
 </head>
 <body>
@@ -31,7 +33,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="header">
             <div class="headertop_desc">
                 <div class="call">
-                    <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></span></p>
+                    <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></p>
                 </div>
                 @{Html.RenderAction("TopMenu", "Home");}
                 <div class="clear"></div>
